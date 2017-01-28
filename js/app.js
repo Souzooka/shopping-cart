@@ -6,28 +6,42 @@ for (var i = 0; i < items.length; i++) {
 
 	sum += items[i].price;
 
+	var productContainer =document.createElement("div");
+
 	var productImage =document.createElement("img");
 	productImage.src = items[i].imageSrc;
+	productImage.className = "image";
 
 	var productName = document.createElement("p");
 	productName.innerHTML = items[i].product;
+	productName.className = "name";
 
 	var productDescription = document.createElement("p");
 	productDescription.innerHTML = items[i].description;
+	productDescription.className = "description";
 
 	var productPrice = document.createElement("p");
 	productPrice.innerHTML = "$" + items[i].price.toString();
+	productPrice.className = "price";
 
-	container.appendChild(productImage);
-	container.appendChild(productName);
-	container.appendChild(productDescription);
-	container.appendChild(productPrice);
+	productContainer.appendChild(document.createElement("hr"));
+	productContainer.appendChild(productImage);
+	productContainer.appendChild(productName);
+	productContainer.appendChild(productDescription);
+	productContainer.appendChild(productPrice);
+	container.appendChild(productContainer);
 
 }
 
 var subtotal = document.createElement("p");
-subtotal.innerHTML = "$" + sum;
+subtotal.innerHTML = "Subtotal:";
+subtotal.className = "subtotalText";
 
-container.appendChild(subtotal);
+var subtotalPrice = document.createElement("p");
+subtotalPrice.innerHTML = "$" + sum;
+subtotalPrice.className = "subtotalTotal";
+
+footer.appendChild(subtotal);
+footer.appendChild(subtotalPrice);
 
 console.log(sum);
