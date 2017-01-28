@@ -32,3 +32,32 @@ body {
 	width:80%;
 	background-color: grey;
 }
+
+.productContainerClass {
+	max-height: 106px;
+}
+
+.image {
+	position:relative;
+	left: 20px;
+}
+
+.textContainer {
+	font-family: monospace;
+	position:relative;
+	left:130px;
+	width: calc(80% - 30px);
+	bottom:120px;
+
+}
+
+.name {
+	font-weight: 500;
+	font-size:20px;
+}
+
+.price {
+	position:absolute;
+	left: calc(100%);
+	bottom:0px;
+}

@@ -7,10 +7,14 @@ for (var i = 0; i < items.length; i++) {
 	sum += items[i].price;
 
 	var productContainer =document.createElement("div");
+	productContainer.className = "productContainerClass";
 
 	var productImage =document.createElement("img");
 	productImage.src = items[i].imageSrc;
 	productImage.className = "image";
+
+	var productTextContainer = document.createElement("div");
+	productTextContainer.className = "textContainer";
 
 	var productName = document.createElement("p");
 	productName.innerHTML = items[i].product;
@@ -26,9 +30,10 @@ for (var i = 0; i < items.length; i++) {
 
 	productContainer.appendChild(document.createElement("hr"));
 	productContainer.appendChild(productImage);
-	productContainer.appendChild(productName);
-	productContainer.appendChild(productDescription);
-	productContainer.appendChild(productPrice);
+	productTextContainer.appendChild(productName);
+	productTextContainer.appendChild(productDescription);
+	productTextContainer.appendChild(productPrice);
+	productContainer.appendChild(productTextContainer);
 	container.appendChild(productContainer);
 
 }
